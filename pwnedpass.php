@@ -7,29 +7,21 @@ $api = "https://api.pwnedpasswords.com/range/";
 $url = $api . $first5;
 $contents = file_get_contents($url);
 ?>
-
 <html>
 <head>
 </head>
 <body>
-
-
 <form id='form' action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
 <legend>PwnedPasswords.API</legend>
 <input type='hidden' name='submitted' id='submitted' value='1'/>
-
 <label for='password' >Password*:</label>
 <input type='password' name='password' id='password' maxlength="50" />
-
 <input type='submit' name='Submit' value='Submit' />
-
 </fieldset>
 </form>
 </body>
 </html>
-
-
 <?php
 $rsuff = ":[0-9]{1,9}/mi";
 $regex = "/" . $lastbit . $rsuff;
