@@ -14,7 +14,7 @@ $contents = file_get_contents($url);
 <body>
 
 
-<form id='login' action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post' accept-charset='UTF-8'>
+<form id='form' action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
 <legend>PwnedPasswords.API</legend>
 <input type='hidden' name='submitted' id='submitted' value='1'/>
