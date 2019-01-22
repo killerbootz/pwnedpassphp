@@ -1,3 +1,3 @@
 # pwnedpassphp
 PwnedPassword_PHP  
-Simple single page integration into the Pwned Passwords API.
+Simple single page framework for integration into the Pwned Passwords API.
