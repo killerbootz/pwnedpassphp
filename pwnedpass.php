@@ -9,7 +9,6 @@ $hash = null;
 $api = "https://api.pwnedpasswords.com/range/";
 $url = $api . $first5;
 $contents = file_get_contents($url);
-$first5 = "0000000000";
 ?>
 <html>
 <head>
