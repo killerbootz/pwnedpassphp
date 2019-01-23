@@ -1,8 +1,10 @@
 <?php
 $hash = sha1($_POST['password']);
 $first5 = substr($hash, 0, 5);  
+if ($first5 == "da39a"){//First5 For SHA1 Blank Space
+	$first5 = null;
+}
 $lastbit = substr($hash, -35);
-$hash = null;
 $api = "https://api.pwnedpasswords.com/range/";
 $url = $api . $first5;
 $contents = file_get_contents($url);
@@ -26,17 +28,20 @@ $contents = file_get_contents($url);
 $rsuff = ":[0-9]{1,9}/mi";
 $regex = "/" . $lastbit . $rsuff;
 preg_match($regex, $contents, $matches);
-echo "This password has been seen ";
+$prefix = "This password has been seen ";
 $pwnedpass = ($matches[0]);
 $numatch = "/:[0-9]{0,9}/mi";
 preg_match($numatch, $pwnedpass, $matches);
 $finmatch0 =  ($matches[0]);
 $finmatch1 = substr($finmatch0, 1);
-if($finmatch1 == 0){
-	echo "<b>0</b> times in the Pwned Passwords database.";
+if($first5 == null){
+	echo "";
+}elseif($finmatch1 == 0){
+	echo $prefix . "<b>0</b> times in the Pwned Passwords database.";
 }else{
-	echo "<b>" . $finmatch1 . "</b> times in the Pwned Passwords database.";
+	echo $prefix . "<b>" . $finmatch1 . "</b> times in the Pwned Passwords database.";
 }
 echo "<br>";
 echo "More information on the Pwned Passwords database and/or API can be found by visiting Troy Hunt's 'HaveIBeenPwned' <a href='https://haveibeenpwned.com/Passwords'> website</a>."
 ?>
+
