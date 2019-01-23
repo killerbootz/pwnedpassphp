@@ -38,8 +38,12 @@ $finmatch1 = substr($finmatch0, 1);
 if($first5 == null){
 	echo "";
 }elseif($finmatch1 == 0){
+	$first5 = "0000000000";
+	$lastbit = "0000000000";
 	echo $prefix . "<b>0</b> times in the Pwned Passwords database.";
 }else{
+	$first5 = "0000000000";
+	$lastbit = "0000000000";
 	echo $prefix . "<b>" . $finmatch1 . "</b> times in the Pwned Passwords database.";
 }
 echo "<br>";
