@@ -3,6 +3,6 @@ PwnedPassword_PHP
 Simple single page framework for integration into the Pwned Passwords API.
 
 Screenshots:  
-![]({{site.baseurl}}/https://github.com/killerbootz/pwnedpassphp/blob/master/img/PwnedPassPHP1.JPG)  
+![]![Alt text](/img/PwnedPassPHP1.JPG?raw=true "Base Page")  
 
-![]({{site.baseurl}}/https://github.com/killerbootz/pwnedpassphp/blob/master/img/PwnedPassPHP2.JPG)
+![]![Alt text](/img/PwnedPassPHP2.JPG?raw=true "Entering 'password' Test") 
