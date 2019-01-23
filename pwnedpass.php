@@ -5,9 +5,11 @@ if ($first5 == "da39a"){//First5 For SHA1 Blank Space
 	$first5 = null;
 }
 $lastbit = substr($hash, -35);
+$hash = null;
 $api = "https://api.pwnedpasswords.com/range/";
 $url = $api . $first5;
 $contents = file_get_contents($url);
+$first5 = null;
 ?>
 <html>
 <head>
@@ -44,4 +46,3 @@ if($first5 == null){
 echo "<br>";
 echo "More information on the Pwned Passwords database and/or API can be found by visiting Troy Hunt's 'HaveIBeenPwned' <a href='https://haveibeenpwned.com/Passwords'> website</a>."
 ?>
-
